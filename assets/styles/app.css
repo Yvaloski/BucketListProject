@@ -1,0 +1,25 @@
+body {
+    background-color: lightgray;
+    font-family: 'Comfortaa', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+
+}
+.container{
+    justify-content: center;
+    display: flex;
+    margin: 20px;
+    flex-grow: 1;
+    width: 100%;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#343a40;
+    color:whitesmoke;
+    height: 80px;
+}
