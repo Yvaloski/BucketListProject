@@ -4,11 +4,33 @@
 {% endblock %}
 
 {% block body %}
+    <h1>The team</h1>
+<div class="team col-10">
+    {% for user in Json %}
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cum doloribus incidunt quas. Accusamus animi
-        asperiores, atque blanditiis debitis delectus ducimus eligendi et facilis fugit harum incidunt labore laborum
-        minima nihil nobis officia praesentium provident quibusdam repellendus rerum saepe, sapiente sed suscipit
-        tenetur totam ullam voluptate! Dolorum neque quis quisquam.</p>
+    <div class="card teamMate col-8">
+            <div class="row no-gutters">
+                <div class="col-sm-5">
+                    <img class="card-img" src="{{ user.picture }} " alt="">
+                </div>
+                <div class="col-sm-7">
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{ user.firstname ~ ' ' ~ user.lastname }}   {% if loop.first %}❤️ {% endif %}</h5>
+
+                        <p>{{ user.creatorOf}} </p>
+                        <p>Né le :  {{ user.dateOfBirth |date('d/m/y') }}</p>
+                        <p class="card-text">{{ user.description }}</p>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+
 {% endblock %}
 
 

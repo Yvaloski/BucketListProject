@@ -4,13 +4,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     width: 100%;
     min-height: 100vh;
 
 }
 .container{
-    justify-content: center;
     display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
     margin: 20px;
     flex-grow: 1;
     width: 100%;
@@ -22,4 +26,21 @@ footer {
     background-color:#343a40;
     color:whitesmoke;
     height: 80px;
+}
+.team{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+
+}
+.teamMate{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: 4px 4px black;
 }
