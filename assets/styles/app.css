@@ -13,7 +13,7 @@ body {
     display: flex;
     align-self: center;
     align-items: center;
-    justify-content: space-around;
+    gap: 25px;
     flex-direction: column;
     margin: 20px;
     flex-grow: 1;
@@ -43,4 +43,27 @@ footer {
     align-items: center;
     border: 2px solid black;
     box-shadow: 4px 4px black;
+}
+.wishcontainer{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 15px   ;
+}
+.wish{
+
+    max-width: 20vw;
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 4px 4px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.wishdetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 15px;
 }

@@ -2,28 +2,45 @@
 
 namespace App\Controller;
 
+use App\Entity\Wish;
+use App\Repository\WishRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+/**
+ * @Route("/wish")
+ */
 class WishController extends AbstractController
 {
     /**
-     * @Route("/wish", name="wish_index")
+     * @Route("/", name="wish_index")
      */
-    public function index(): Response
+    public function index(WishRepository $wishRepository): Response
     {
-        return $this->render('wish/index.html.twig');
+        // on peut utiliser le EntityManagerInterface pour recupérer le repositorie aussi
+
+        $wishes=$wishRepository->findBy(['isPublished'=>true], ['dateCreated'=>'DESC']);
+        return $this->render('wish/index.html.twig',[
+            'wishes'=>$wishes
+        ]);
     }
 
     /**
-     * @Route("/show", name="wish_show")
+     * @Route("/{id}", name="wish_show",requirements={"id"="\d+"})
      */
-    public function show(int $id):Response
+    public function show(WishRepository $wishRepository,int $id):Response
     {
-        //TODO: Récupérer la serie correspondante a $id
+        // Récupérer le souhait correspondante a $id
+        $wish = $wishRepository->find($id);
+        if ($wish == null) {
+            throw $this->createNotFoundException("Ce souhait n'existe pas ");
+        }
+
+
         return $this->render('wish/show.html.twig',[
-            'id'=>$id
+            'wish' => $wish
 
         ]);
     }
