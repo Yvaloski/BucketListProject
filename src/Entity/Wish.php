@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\WishRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=WishRepository::class)
@@ -20,6 +21,7 @@ class Wish
 
     /**
      * @ORM\Column(type="string", length=250)
+     * @Assert\NotBlank(message="Veuillez donner un titre à votre souhait")
      */
     private $title;
 
@@ -30,6 +32,7 @@ class Wish
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank(message="Renseigner un nom ou pseudo !")
      */
     private $author;
 

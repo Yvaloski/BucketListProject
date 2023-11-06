@@ -67,3 +67,6 @@ footer {
     justify-content: left;
     gap: 15px;
 }
+form{
+    width: 50%;
+}
