@@ -1,4 +1,8 @@
 <footer>
 
     © Bucket-List {{ 'now' | date('Y')}}
+
+    <p>
+    {{ render(controller('App\\Controller\\CategoryController::list')) }}
+    </p>
 </footer>

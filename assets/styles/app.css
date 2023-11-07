@@ -23,6 +23,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;git
     background-color:#343a40;
     color:whitesmoke;
     height: 80px;
@@ -53,6 +54,7 @@ footer {
 }
 .wish{
 
+    min-width: 20vw;
     max-width: 20vw;
     padding: 20px;
     border: 2px solid black;

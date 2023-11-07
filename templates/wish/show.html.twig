@@ -6,6 +6,7 @@
     <div class="wishcontainer">
         <div class="wishdetails">
     <h1>{{ wish.title }}</h1>
+            <h5><a href="{{ path('app_category_show', {'id':wish.category.id }) }}">{{ wish.category.name }}</a></h5>
     <p>{{ wish.description }}</p>
     <p>écrit par : {{ wish.author }} le : {{ wish.dateCreated | date("d/m/y ") }}</p>
         </div>
