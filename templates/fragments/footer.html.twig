@@ -2,7 +2,8 @@
 
     © Bucket-List {{ 'now' | date('Y')}}
 
-    <p>
-    {{ render(controller('App\\Controller\\CategoryController::list')) }}
-    </p>
+    <div class="categories">
+    {{ render(controller('App\\Controller\\CategoryController::list'))  }}
+
+    </div>
 </footer>

@@ -13,6 +13,9 @@
           <p>{{ wish.title }}</p>
       {% endfor %}
   </section>
+    {% if app.user %}
+        {{ include('category/_delete_form.html.twig') }}
+    {% endif %}
 
-    {{ include('category/_delete_form.html.twig') }}
+
 {% endblock %}

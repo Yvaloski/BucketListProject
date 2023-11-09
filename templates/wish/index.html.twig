@@ -3,18 +3,19 @@
 {% block title %}Wish-List{% endblock %}
 
 {% block body %}
-        <h1>Wish List</h1>
+    <h1>Wish List</h1>
 
 
     <div class="wishcontainer">
 
-    {% for wish in wishes %}
-        <div class="wish">
-        <h2>{{ wish.title }}</h2>
-            <h5>{{ wish.category.name }}</h5>
-        <p>{{ wish.description }}</p>
-            <a href=" {{ path('wish_show', {'id':wish.id}) }}">+ d'infos</a>
-        </div>
-    {% endfor %}
+        {% for wish in wishes %}
+            <div class="wish">
+                <h2>{{ wish.title }}</h2>
+                <h5>{{ wish.category.name }}</h5>
+                <p>{{ wish.description }}</p>
+                <a href=" {{ path('wish_show', {'id':wish.id}) }}">+ d'infos</a>
+                <p>write by {{ wish.user.userIdentifier }}</p>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

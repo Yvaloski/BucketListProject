@@ -11,6 +11,10 @@
     <p>écrit par : {{ wish.author }} le : {{ wish.dateCreated | date("d/m/y ") }}</p>
         </div>
     </div>
+
+    {% if app.user == wish.user %}
+        <a type="button" href="{{ path('wish_edit', {'id': wish.id}) }}" class="btn btn-secondary">Edit</a>
+    {% endif %}
 {% endblock %}
 
 

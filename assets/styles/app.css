@@ -23,10 +23,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;git
+    flex-direction: column;
     background-color:#343a40;
     color:whitesmoke;
     height: 80px;
+    gap: 10px;
+}
+.categories{
+    display: flex;
+    gap: 10px;
 }
 .team{
     margin-top: 30px;
@@ -62,6 +67,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: left;
+    gap: 10px;
 }
 .wishdetails{
     display: flex;

@@ -6,9 +6,11 @@ use App\Entity\Category;
 use App\Entity\Wish;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class WishFixtures extends Fixture
 {
+
     public function load(ObjectManager $manager): void
     {
         // $product = new Product();
@@ -18,6 +20,7 @@ class WishFixtures extends Fixture
 
         $wish = new Wish();
         $wish->setTitle("One wish ");
+        $wish->setUser($this->getReference(UserFixtures::USER2));
         $wish->setDescription("some good description");
         $wish->setAuthor("John Doe");
         $wish->setIsPublished(true);
@@ -27,6 +30,7 @@ class WishFixtures extends Fixture
 
         $wish1 = new Wish();
         $wish1->setTitle("One Love ");
+        $wish1->setUser($this->getReference(UserFixtures::USER2));
         $wish1->setDescription("some good love wishes");
         $wish1->setAuthor("John thatam");
         $wish1->setIsPublished(false);
@@ -37,6 +41,7 @@ class WishFixtures extends Fixture
 
         $wish2 = new Wish();
         $wish2->setTitle("be rich ");
+        $wish2->setUser($this->getReference(UserFixtures::USER2));
         $wish2->setDescription("some good richness in a rich world");
         $wish2->setAuthor("John Doe");
         $wish2->setIsPublished(true);
