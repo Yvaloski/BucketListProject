@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Page interdite | {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+    <h1>Error 403</h1>
+    <h3>Sorry Mate you can't go there</h3>
+    <a href="{{ path('home') }}">Go back to home page</a>
+{% endblock %}

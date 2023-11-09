@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Page introuvable | {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+    <h1>Error 404</h1>
+    <h3>Sorry Mate we can't find this page</h3>
+    <a href="{{ path('home') }}">Go back to home page</a>
+{% endblock %}
